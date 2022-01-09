@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.firiz.gnomebook.GnomeBookController" fx:id="vBox">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="542.0" prefWidth="634.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS" fx:id="anchorPane">
+      <children>
+        <Label fx:id="titre" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="154.0" layoutY="41.0" style="&#10;" text="gnomeBook" textAlignment="CENTER" textFill="#fcaa07" wrapText="false">
+          <font>
+            <Font name="DejaVu Sans Bold" size="70.0" />
+          </font>
+        </Label>
+            <ButtonBar layoutX="279.0" layoutY="262.0" prefHeight="40.0" prefWidth="255.0">
+              <buttons>
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="164.0" style="-fx-border-radius: 50%;" text="Display" fx:id="displayButton" onAction="#displayButtonClicked">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                <Button mnemonicParsing="false" text="Insert">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Search">
+                     <font>
+                        <Font name="URWGothic-Book" size="13.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+              </buttons>
+            </ButtonBar>
+            <Label contentDisplay="GRAPHIC_ONLY" layoutX="44.0" layoutY="84.0" />
+              <ImageView id="img" fx:id="avatar" fitHeight="100.0" fitWidth="100.0" layoutX="30.0" layoutY="49.0" pickOnBounds="true">
+                  <image>
+                      <Image preserveRatio="true" smooth="true" url="@gnome.png" fx:id="img"/>
+                  </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+              </ImageView>
+      </children>
+    </AnchorPane>
+  </children>
+   <effect>
+      <ColorAdjust />
+   </effect>
+</VBox>
