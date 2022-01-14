@@ -3,11 +3,9 @@ package fr.firiz.gnomebook;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ResourceBundle;
 
 public class GnomeBook extends Application {
     @Override

@@ -1,5 +1,6 @@
-package fr.firiz.gnomebook;
+package fr.firiz.controller;
 
+import fr.firiz.gnomebook.SearchActivity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,13 +16,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GnomeBookController implements Initializable {
 
-    short i = 0;
-    int x = 0;
     @FXML
     ImageView avatar;
     @FXML
@@ -34,9 +34,11 @@ public class GnomeBookController implements Initializable {
     AnchorPane anchorPane;
     @FXML
     Button displayButton;
+    Stage mainStage;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         Rectangle rectangle = new Rectangle();
         rectangle.setHeight(100.0f);
         rectangle.setWidth(100.0f);
@@ -51,12 +53,12 @@ public class GnomeBookController implements Initializable {
         avatar.setImage(image);
     }
 
-    public void displayButtonClicked(ActionEvent actionEvent) {
-        Stage stage = (Stage) displayButton.getScene().getWindow();
-        stage.close();
+    public void searchButtonClicked(ActionEvent actionEvent) throws IOException {
+        mainStage = (Stage) displayButton.getScene().getWindow();
+        Stage newStage = new Stage();
+        SearchActivity searchActivity = new SearchActivity(newStage, mainStage);
     }
 
-    private String toString(short i) {
-        return String.valueOf(i);
+    public void displayButtonClicked(ActionEvent actionEvent) {
     }
 }

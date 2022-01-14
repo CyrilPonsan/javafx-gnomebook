@@ -44,7 +44,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.firiz.gnomebook.GnomeBookController" fx:id="vBox">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.firiz.controller.GnomeBookController" fx:id="vBox">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="542.0" prefWidth="634.0" style="-fx-background-color: #000000;" VBox.vgrow="ALWAYS" fx:id="anchorPane">
       <children>
@@ -65,7 +65,7 @@
                         <DropShadow />
                      </effect>
                   </Button>
-                  <Button mnemonicParsing="false" text="Search">
+                  <Button mnemonicParsing="false" text="Search" fx:id="searchButton" onAction="#searchButtonClicked">
                      <font>
                         <Font name="URWGothic-Book" size="13.0" />
                      </font>
