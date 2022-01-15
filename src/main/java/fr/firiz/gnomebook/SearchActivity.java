@@ -17,7 +17,6 @@ public class SearchActivity extends Application {
         this.searchActivityStage = newStage;
         this.start(searchActivityStage);
         mainStage = parentStage;
-        System.out.println(mainStage.getTitle());
     }
     @Override
     public void start(Stage stage) throws IOException {
