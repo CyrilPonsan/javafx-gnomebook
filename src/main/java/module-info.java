@@ -2,6 +2,7 @@ module fr.firiz.controller {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+	requires javafx.graphics;
 
 
     opens fr.firiz.gnomebook to javafx.fxml;

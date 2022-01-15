@@ -14,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,11 +30,7 @@ public class GnomeBookController implements Initializable {
     @FXML
     Label titre;
     @FXML
-    VBox vBox;
-    @FXML
-    AnchorPane anchorPane;
-    @FXML
-    Button displayButton;
+    Button searchButton;
     Stage mainStage;
 
     @Override
@@ -54,7 +51,7 @@ public class GnomeBookController implements Initializable {
     }
 
     public void searchButtonClicked(ActionEvent actionEvent) throws IOException {
-        mainStage = (Stage) displayButton.getScene().getWindow();
+        mainStage = (Stage) searchButton.getScene().getWindow();
         Stage newStage = new Stage();
         SearchActivity searchActivity = new SearchActivity(newStage, mainStage);
     }

@@ -17,6 +17,21 @@ public class MyConnection {
         conn.close();
     }
 
+    public static boolean testData(String name) throws IOException, SQLException {
+        if (user == null) {
+            setConnectionInfos();
+        }
+        Connection conn = DriverManager.getConnection(url, user, passwd);
+        String sql = "SELECT * FROM gnome WHERE nom = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, name);
+        ResultSet result = stmt.executeQuery();
+        if (result.next()) {
+            return true;
+        }
+        return false;
+    }
+
     public static Gnome getData(String name) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         Gnome gnome = null;
         if (user == null) {
@@ -40,7 +55,7 @@ public class MyConnection {
 
     public static void setConnectionInfos() throws IOException {
         String infos[] = new String[3];
-        File file = new File("./src/main/java/connexion.dbb");
+        File file = new File("./src/main/java/datas/connexion.data");
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
         String line = "";

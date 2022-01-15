@@ -1,5 +1,6 @@
 package fr.firiz.gnomebook;
 
+import fr.firiz.modele.Version;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -24,6 +25,7 @@ public class SearchActivity extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         searchActivityStage.setScene(scene);
         searchActivityStage.initModality(Modality.APPLICATION_MODAL);
+        searchActivityStage.setTitle(Version.getVersion());
         searchActivityStage.show();
     }
 }

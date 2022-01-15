@@ -1,5 +1,6 @@
 package fr.firiz.gnomebook;
 
+import fr.firiz.modele.Version;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,8 +13,11 @@ public class GnomeBook extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GnomeBook.class.getResource("gnomebook.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("gnomeBook v0.01");
+        Version.setVersion();
+        stage.setTitle(Version.getVersion());
         stage.setScene(scene);
+        stage.setWidth(680);
+        stage.setHeight(340);
         stage.show();
     }
 
