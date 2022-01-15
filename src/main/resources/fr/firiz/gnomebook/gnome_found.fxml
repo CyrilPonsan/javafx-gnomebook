@@ -15,7 +15,7 @@
             <Font size="56.0" />
          </font>
       </Label>
-      <Label fx:id="classe" layoutX="375.0" layoutY="122.0" text="Label" textFill="WHITE">
+      <Label fx:id="classe" layoutX="375.0" layoutY="122.0" text="Label" textFill="WHITE" id="nameLabel">
          <font>
             <Font size="20.0" />
          </font>
@@ -27,7 +27,7 @@
       </Label>
       <ButtonBar layoutX="500.0" layoutY="304.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
-            <Button mnemonicParsing="false" text="Chercher" />
+            <Button mnemonicParsing="false" text="Chercher" fx:id="chercherBouton" onAction="#chercherBoutonClicked"/>
           <Button mnemonicParsing="false" text="Retour" />
         </buttons>
       </ButtonBar>

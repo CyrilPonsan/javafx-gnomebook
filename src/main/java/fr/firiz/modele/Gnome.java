@@ -31,6 +31,6 @@ public class Gnome {
     }
 
     public void setAvatar(String url) {
-        //this.avatar = url.replaceFirst("./", "./src/main/java/");
+        this.avatar = url.replaceFirst(".", "http://localhost/gnomeBook");
     }
 }
