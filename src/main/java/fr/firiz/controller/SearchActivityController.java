@@ -33,7 +33,6 @@ public class SearchActivityController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        goSearchButton.setVisible(false);
     }
 
     public void goSearchButtonClicked(ActionEvent actionEvent) throws Exception {
