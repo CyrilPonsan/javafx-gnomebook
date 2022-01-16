@@ -1,8 +1,7 @@
 package fr.firiz.controller;
 
-import fr.firiz.gnomebook.GnomeBook;
 import fr.firiz.gnomebook.InsertActivity;
-import fr.firiz.gnomebook.SearchActivity;
+import fr.firiz.gnomebook.PopUp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +12,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ConfirmationController implements Initializable {
+public class PopUpController implements Initializable {
 
     @FXML
     Button retourButton;
@@ -28,6 +27,6 @@ public class ConfirmationController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        message.setText(InsertActivityController.getMessage());
+        message.setText(PopUp.getMessage());
     }
 }

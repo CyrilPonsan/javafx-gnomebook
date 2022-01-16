@@ -1,10 +1,8 @@
 package fr.firiz.controller;
 
-import fr.firiz.gnomebook.GnomeBook;
 import fr.firiz.gnomebook.SearchActivity;
 import fr.firiz.modele.Gnome;
 import fr.firiz.modele.MyConnection;
-import fr.firiz.modele.Version;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

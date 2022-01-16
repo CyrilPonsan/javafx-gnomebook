@@ -3,7 +3,6 @@ package fr.firiz.controller;
 import fr.firiz.gnomebook.GnomeBook;
 import fr.firiz.gnomebook.InsertActivity;
 import fr.firiz.gnomebook.SearchActivity;
-import fr.firiz.modele.Gnome;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
