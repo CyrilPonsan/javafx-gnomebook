@@ -31,6 +31,12 @@ public class InsertActivityController implements Initializable {
     @FXML
     Label titreLabel;
 
+    static String message = "Gnome Enregistré";
+
+    public static String getMessage() {
+        return message;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         InsertActivity.getMainStage().setOpacity(0);
@@ -43,9 +49,9 @@ public class InsertActivityController implements Initializable {
                 MyConnection.insertData(gnome);
                 FXMLLoader fxmlLoader = new FXMLLoader(InsertActivity.class.getResource("confirmation.fxml"));
                 Scene newScene = new Scene(fxmlLoader.load());
-                fxmlLoader.setController(new ConfirmationController());
                 Stage stage = (Stage) submitButton.getScene().getWindow();
                 stage.setScene(newScene);
+                stage.sizeToScene();
                 stage.centerOnScreen();
             } else {
                 titreLabel.setText("Nom déjà pris");
