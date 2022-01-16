@@ -26,7 +26,9 @@ public class MyConnection {
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setString(1, name);
         ResultSet result = stmt.executeQuery();
-        return result.next();
+        boolean reponse = result.next();
+        closeConnection(conn, stmt);
+        return reponse;
     }
 
     public static Gnome getData(String name) throws SQLException, IOException {
@@ -41,7 +43,7 @@ public class MyConnection {
         ResultSet result = preparedStmt.executeQuery();
         while (result.next()) {
             gnome = new Gnome(name, result.getString("metier"
-            ), result.getInt("niveau"), result.getString("avatar"));
+            ), result.getInt("niveau"));
             gnome.setAvatar(result.getString("avatar"));
             System.out.println(name + result.getString("metier"
             ) + result.getInt("niveau") + result.getString("avatar"));
@@ -65,6 +67,19 @@ public class MyConnection {
         passwd = infos[1];
         url = infos[2];
         br.close();
+    }
 
+    public static void insertData(Gnome gnome) throws IOException, SQLException {
+        if (user == null) {
+            setConnectionInfos();
+        }
+        Connection conn = DriverManager.getConnection(url, user, passwd);
+        String sql = "INSERT INTO gnome (nom, metier, niveau) VALUES (?, ?, ?)";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, gnome.getNom());
+        stmt.setString(2, gnome.getMetier());
+        stmt.setString(3, gnome.getNiveau());
+        stmt.executeUpdate();
+        closeConnection(conn, stmt);
     }
 }

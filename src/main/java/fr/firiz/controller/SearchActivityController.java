@@ -1,5 +1,6 @@
 package fr.firiz.controller;
 
+import fr.firiz.gnomebook.GnomeBook;
 import fr.firiz.gnomebook.SearchActivity;
 import fr.firiz.modele.Gnome;
 import fr.firiz.modele.MyConnection;
@@ -18,7 +19,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SearchActivityController implements Initializable{
+public class SearchActivityController implements Initializable {
 
     @FXML
     TextField textField;
@@ -35,9 +36,8 @@ public class SearchActivityController implements Initializable{
         Stage mainStage = SearchActivity.getMainStage();
         mainStage.setOpacity(0);
         goSearchButton.setDisable(true);
-        textField.textProperty().addListener((observableValue, s, s2) -> {
-            goSearchButton.setDisable(textField.getText().length() == 0);
-        });
+        textField.textProperty().addListener((observableValue, s, s2) ->
+                goSearchButton.setDisable(textField.getText().length() == 0));
     }
 
     public void goSearchButtonClicked(ActionEvent actionEvent) throws Exception {
@@ -49,11 +49,9 @@ public class SearchActivityController implements Initializable{
             Stage stage = (Stage) scene.getWindow();
             fxmlLoader.setController(new GnomeFoundController());
             stage.setScene(newScene);
-            stage.setTitle(Version.getVersion());
             stage.centerOnScreen();
         } else {
-            Stage stage = (Stage) goSearchButton.getScene().getWindow();
-            stage.setTitle("Aucun gnome trouvé à ce nom...");
+            SearchActivity.getMainStage().setTitle("Aucun gnome trouvé à ce nom...");
         }
     }
 

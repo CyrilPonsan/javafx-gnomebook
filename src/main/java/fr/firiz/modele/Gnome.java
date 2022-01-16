@@ -7,7 +7,7 @@ public class Gnome {
     private final int niveau;
     private String avatar;
 
-    public Gnome(String nom, String metier, int niveau, String avatar) {
+    public Gnome(String nom, String metier, int niveau) {
         this.nom = nom;
         this.metier = metier;
         this.niveau = niveau;

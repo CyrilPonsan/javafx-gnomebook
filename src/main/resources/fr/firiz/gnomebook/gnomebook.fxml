@@ -22,8 +22,8 @@
       </Label>
       <ButtonBar layoutX="251.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
-            <Button mnemonicParsing="false" text="Insert" />
-            <Button mnemonicParsing="false" text="Display" />
+            <Button fx:id="insertButton" mnemonicParsing="false" text="Insert" onAction="#insertButtonClicked" />
+            <Button mnemonicParsing="false" text="Display"/>
           <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButtonClicked" text="Search" />
         </buttons>
       </ButtonBar>
