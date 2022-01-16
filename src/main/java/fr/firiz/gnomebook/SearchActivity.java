@@ -23,13 +23,13 @@ public class SearchActivity extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(SearchActivity.class.getResource("search_activity.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        searchActivityStage.setScene(scene);
-        searchActivityStage.initModality(Modality.APPLICATION_MODAL);
-        searchActivityStage.setTitle(Version.getVersion());
-        searchActivityStage.show();
-        searchActivityStage.setOnCloseRequest(e -> {
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle(Version.getVersion());
+        stage.show();
+        stage.setOnCloseRequest(e -> {
             mainStage.setOpacity(1);
-            searchActivityStage.close();
+            stage.close();
         });
     }
 

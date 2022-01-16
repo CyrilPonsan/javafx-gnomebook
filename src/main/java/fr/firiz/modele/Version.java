@@ -13,7 +13,7 @@ public class Version {
         File file = new File("./src/main/java/datas/version.data");
         FileReader fr = new FileReader(file);
         BufferedReader bf = new BufferedReader(fr);
-        String line = null;
+        String line;
         while ((line = bf.readLine()) != null) {
             version = line;
         }

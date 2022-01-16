@@ -1,5 +1,6 @@
 package fr.firiz.controller;
 
+import fr.firiz.gnomebook.GnomeBook;
 import fr.firiz.gnomebook.SearchActivity;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,7 +49,7 @@ public class GnomeBookController implements Initializable {
     }
 
     public void searchButtonClicked(ActionEvent actionEvent) throws IOException {
-        mainStage = (Stage) searchButton.getScene().getWindow();
+        mainStage = GnomeBook.getMainStage();
         Stage newStage = new Stage();
         SearchActivity searchActivity = new SearchActivity(newStage, mainStage);
     }

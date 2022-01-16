@@ -34,6 +34,10 @@ public class SearchActivityController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         Stage mainStage = SearchActivity.getMainStage();
         mainStage.setOpacity(0);
+        goSearchButton.setDisable(true);
+        textField.textProperty().addListener((observableValue, s, s2) -> {
+            goSearchButton.setDisable(textField.getText().length() == 0);
+        });
     }
 
     public void goSearchButtonClicked(ActionEvent actionEvent) throws Exception {
