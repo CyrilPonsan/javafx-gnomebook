@@ -11,13 +11,13 @@ import java.io.IOException;
 
 public class SearchActivity extends Application {
 
-    Stage mainStage;
+    static Stage mainStage;
     Stage searchActivityStage;
 
     public SearchActivity(Stage newStage, Stage parentStage) throws IOException {
         this.searchActivityStage = newStage;
-        this.start(searchActivityStage);
         mainStage = parentStage;
+        this.start(searchActivityStage);
     }
     @Override
     public void start(Stage stage) throws IOException {
@@ -27,5 +27,14 @@ public class SearchActivity extends Application {
         searchActivityStage.initModality(Modality.APPLICATION_MODAL);
         searchActivityStage.setTitle(Version.getVersion());
         searchActivityStage.show();
+        searchActivityStage.setOnCloseRequest(e -> {
+            mainStage.setOpacity(1);
+            searchActivityStage.close();
+        });
     }
+
+    public static Stage getMainStage() {
+        return mainStage;
+    }
+
 }

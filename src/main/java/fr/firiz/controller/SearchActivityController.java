@@ -12,14 +12,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.InputMethodEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SearchActivityController implements Initializable {
+public class SearchActivityController implements Initializable{
 
     @FXML
     TextField textField;
@@ -32,7 +31,9 @@ public class SearchActivityController implements Initializable {
     static Gnome gnome;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL location, ResourceBundle resources) {
+        Stage mainStage = SearchActivity.getMainStage();
+        mainStage.setOpacity(0);
     }
 
     public void goSearchButtonClicked(ActionEvent actionEvent) throws Exception {
@@ -55,4 +56,5 @@ public class SearchActivityController implements Initializable {
     public static Gnome getGnome() {
         return gnome;
     }
+
 }

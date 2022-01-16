@@ -2,9 +2,9 @@ package fr.firiz.modele;
 
 public class Gnome {
 
-    private String nom;
-    private String metier;
-    private int niveau;
+    private final String nom;
+    private final String metier;
+    private final int niveau;
     private String avatar;
 
     public Gnome(String nom, String metier, int niveau, String avatar) {
