@@ -4,7 +4,7 @@
 .label {
 	-fx-font-weight: bold;
 	-fx-font-size: 12px;
-	-fx-text-fill: white;
+	-fx-text-fill: orange;
 }
 .button {    
 	-fx-background-color: 

@@ -7,13 +7,19 @@ import fr.firiz.modele.Version;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class SearchActivityController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class SearchActivityController implements Initializable {
 
     @FXML
     TextField textField;
@@ -21,7 +27,14 @@ public class SearchActivityController {
     AnchorPane anchorPane;
     @FXML
     Button goSearchButton;
+    @FXML
+    Label titre;
     static Gnome gnome;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        goSearchButton.setVisible(false);
+    }
 
     public void goSearchButtonClicked(ActionEvent actionEvent) throws Exception {
         if (MyConnection.testData(textField.getText())) {
