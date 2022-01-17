@@ -1,5 +1,6 @@
 package fr.firiz.controller;
 
+import fr.firiz.gnomebook.GnomeBook;
 import fr.firiz.gnomebook.SearchActivity;
 import fr.firiz.modele.Gnome;
 import fr.firiz.modele.MyConnection;
@@ -31,7 +32,7 @@ public class SearchActivityController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Stage mainStage = SearchActivity.getMainStage();
+        Stage mainStage = GnomeBook.getMainStage();
         mainStage.setOpacity(0);
         goSearchButton.setDisable(true);
         textField.textProperty().addListener((observableValue, s, s2) ->
@@ -49,7 +50,7 @@ public class SearchActivityController implements Initializable {
             stage.setScene(newScene);
             stage.centerOnScreen();
         } else {
-            SearchActivity.getMainStage().setTitle("Aucun gnome trouvé à ce nom...");
+            GnomeBook.getMainStage().setTitle("Aucun gnome trouvé à ce nom...");
         }
     }
 

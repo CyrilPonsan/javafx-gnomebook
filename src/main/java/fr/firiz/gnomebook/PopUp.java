@@ -1,6 +1,5 @@
 package fr.firiz.gnomebook;
 
-import fr.firiz.modele.Version;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -24,7 +23,7 @@ public class PopUp  extends Application  {
         FXMLLoader fxmlLoader = new FXMLLoader(PopUp.class.getResource("popup.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setScene(scene);
-        primaryStage.setTitle(Version.getVersion());
+        primaryStage.setTitle(GnomeBook.getVersion());
         primaryStage.show();
     }
 }

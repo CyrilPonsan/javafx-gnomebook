@@ -1,5 +1,6 @@
 package fr.firiz.controller;
 
+import fr.firiz.gnomebook.GnomeBook;
 import fr.firiz.gnomebook.SearchActivity;
 import fr.firiz.modele.Gnome;
 import javafx.event.ActionEvent;
@@ -30,6 +31,7 @@ public class GnomeFoundController implements Initializable {
     ImageView avatar;
     @FXML
     Button retourButton;
+
     Gnome gnome;
 
     @Override
@@ -57,6 +59,7 @@ public class GnomeFoundController implements Initializable {
     public void onBoutonRetourClicked(ActionEvent actionEvent) {
         Stage stage = (Stage) retourButton.getScene().getWindow();
         stage.close();
-        SearchActivity.getMainStage().setOpacity(1);
+        GnomeBook.getMainStage().setOpacity(1);
     }
+
 }

@@ -1,5 +1,6 @@
 package fr.firiz.controller;
 
+import fr.firiz.gnomebook.GnomeBook;
 import fr.firiz.gnomebook.InsertActivity;
 import fr.firiz.gnomebook.PopUp;
 import javafx.event.ActionEvent;
@@ -22,7 +23,7 @@ public class PopUpController implements Initializable {
     public void retourButtonClicked(ActionEvent actionEvent) {
         Stage stage = (Stage) retourButton.getScene().getWindow();
         stage.close();
-        InsertActivity.getMainStage().setOpacity(1);
+        GnomeBook.getMainStage().setOpacity(1);
     }
 
     @Override

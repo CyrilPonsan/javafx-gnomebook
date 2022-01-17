@@ -1,6 +1,5 @@
 package fr.firiz.gnomebook;
 
-import fr.firiz.modele.Version;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,12 +10,10 @@ import java.io.IOException;
 
 public class SearchActivity extends Application {
 
-    static Stage mainStage;
     Stage searchActivityStage;
 
-    public SearchActivity(Stage newStage, Stage parentStage) throws IOException {
-        this.searchActivityStage = newStage;
-        mainStage = parentStage;
+    public SearchActivity() throws IOException {
+        this.searchActivityStage = new Stage();
         this.start(searchActivityStage);
     }
     @Override
@@ -25,16 +22,12 @@ public class SearchActivity extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle(Version.getVersion());
+        stage.setTitle(GnomeBook.getVersion());
         stage.show();
         stage.setOnCloseRequest(e -> {
-            mainStage.setOpacity(1);
+            GnomeBook.getMainStage().setOpacity(1);
             stage.close();
         });
-    }
-
-    public static Stage getMainStage() {
-        return mainStage;
     }
 
 }

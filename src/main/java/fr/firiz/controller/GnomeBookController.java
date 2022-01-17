@@ -49,12 +49,10 @@ public class GnomeBookController implements Initializable {
     }
 
     public void searchButtonClicked(ActionEvent actionEvent) throws IOException {
-        Stage newStage = new Stage();
-        SearchActivity searchActivity = new SearchActivity(newStage, GnomeBook.getMainStage());
+        SearchActivity searchActivity = new SearchActivity();
     }
 
     public void insertButtonClicked(ActionEvent actionEvent) throws IOException {
-        Stage newStage = new Stage();
-        InsertActivity insertActivity = new InsertActivity(newStage, GnomeBook.getMainStage());
+        InsertActivity insertActivity = new InsertActivity();
     }
 }
