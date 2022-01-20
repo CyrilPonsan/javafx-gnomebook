@@ -50,7 +50,8 @@ public class SearchActivityController implements Initializable {
             stage.setScene(newScene);
             stage.centerOnScreen();
         } else {
-            GnomeBook.getMainStage().setTitle("Aucun gnome trouvé à ce nom...");
+            Stage stage = (Stage) goSearchButton.getScene().getWindow();
+            stage.setTitle("Aucun gnome trouvé à ce nom...");
         }
     }
 
